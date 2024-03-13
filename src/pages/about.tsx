@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link, PageProps, navigate } from "gatsby";
+import { PageProps, navigate } from "gatsby";
 import Layout from "../components/Layout";
 
 const AboutPage: React.FC<PageProps> = () => {
