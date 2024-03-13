@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import React, { PropsWithChildren } from "react";
+import * as style from "./Layout.module.css";
 
 interface Props {
   pageTitle: string;
@@ -7,8 +8,8 @@ interface Props {
 
 function Layout({ pageTitle, children }: PropsWithChildren<Props>) {
   return (
-    <div>
-      <h1>{pageTitle}</h1>
+    <div className={style.container}>
+      <h1 className={style.title}>{pageTitle}</h1>
 
       <nav>
         <ul>
