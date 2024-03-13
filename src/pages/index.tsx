@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Link, type HeadFC, type PageProps, navigate } from "gatsby";
+import Layout from "../components/Layout";
 
 const IndexPage: React.FC<PageProps> = () => {
   const handleGoAbout = () => {
@@ -11,15 +12,11 @@ const IndexPage: React.FC<PageProps> = () => {
   };
 
   return (
-    <main>
-      <h1>Here is the home page</h1>
-
-      <Link to="/about">Go to about page</Link>
-
+    <Layout pageTitle="Home Page">
       <button onClick={handleGoAbout}>go about</button>
 
       <button onClick={handleGoAboutReplace}>go about replace</button>
-    </main>
+    </Layout>
   );
 };
 
