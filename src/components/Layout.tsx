@@ -1,27 +1,15 @@
 import { Link } from "gatsby";
-import styled from "@emotion/styled";
 import React, { PropsWithChildren } from "react";
+import { containerStyle, h1Style } from "./Layout.css";
 
 interface Props {
   pageTitle: string;
 }
 
-const StyledContainer = styled.div({
-  padding: 32,
-});
-
 function Layout({ pageTitle, children }: PropsWithChildren<Props>) {
   return (
-    <StyledContainer>
-      <h1
-        css={{
-          fontSize: 48,
-          color: "#372525",
-          marginBottom: 32,
-        }}
-      >
-        {pageTitle}
-      </h1>
+    <div className={containerStyle}>
+      <h1 className={h1Style}>{pageTitle}</h1>
 
       <nav>
         <ul>
@@ -35,7 +23,7 @@ function Layout({ pageTitle, children }: PropsWithChildren<Props>) {
       </nav>
 
       <main>{children}</main>
-    </StyledContainer>
+    </div>
   );
 }
 
