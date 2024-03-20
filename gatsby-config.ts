@@ -6,7 +6,16 @@ const config: GatsbyConfig = {
     siteUrl: `https://gatsby-start-khaki.vercel.app/`,
   },
   graphqlTypegen: true,
-  plugins: ["gatsby-plugin-vanilla-extract"],
+  plugins: [
+    "gatsby-plugin-vanilla-extract",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `blog`,
+        path: `${__dirname}/blog`,
+      },
+    },
+  ],
 };
 
 export default config;
