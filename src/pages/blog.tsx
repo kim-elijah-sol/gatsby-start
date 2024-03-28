@@ -1,4 +1,4 @@
-import { PageProps, graphql } from "gatsby";
+import { Link, PageProps, graphql } from "gatsby";
 import React from "react";
 import { liStyle } from "./blog.css";
 
@@ -8,6 +8,7 @@ type QueryResponse = {
       frontmatter: {
         date: string;
         title: string;
+        slug: string;
       };
       /**
        * 고유 key 값
@@ -32,7 +33,10 @@ const Blog: React.FC<PageProps<QueryResponse>> = ({ data }) => {
       <ul>
         {data.allMdx.nodes.map((node) => (
           <li key={node.id} className={liStyle}>
-            <h3>{node.frontmatter.title}</h3>
+            <Link to={`/blog/${node.frontmatter.slug}`}>
+              <h3>{node.frontmatter.title}</h3>
+            </Link>
+
             <p>{node.frontmatter.date}</p>
 
             <p>{node.excerpt}</p>
@@ -52,6 +56,7 @@ export const query = graphql`
         frontmatter {
           date(formatString: "MMMM D, YYYY")
           title
+          slug
         }
         id
         excerpt
