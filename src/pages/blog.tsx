@@ -1,6 +1,6 @@
 import { Link, PageProps, graphql } from "gatsby";
 import React from "react";
-import { liStyle } from "./blog.css";
+import { liStyle } from "../styles/pages/blog.css";
 
 type QueryResponse = {
   allMdx: {
